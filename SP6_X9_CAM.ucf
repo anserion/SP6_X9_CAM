@@ -1,0 +1,47 @@
+#hardware input/outputs of X-SP6-X9 board
+NET "CLK50_ucf" LOC = P126 | TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
+#magic
+PIN "clocking_chip/clkout1_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "clocking_chip/clkout2_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "clocking_chip/clkout3_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "clocking_chip/clkout4_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+
+########VGA Pin define#####################
+NET vga_red              LOC = P100;# | IOSTANDARD = "LVCMOS33";
+NET vga_green            LOC = P99;#  | IOSTANDARD = "LVCMOS33";
+NET vga_blue             LOC = P98;#  | IOSTANDARD = "LVCMOS33";
+NET vga_vsync            LOC = P97;#  | IOSTANDARD = "LVCMOS33";
+NET vga_hsync            LOC = P95;#  | IOSTANDARD = "LVCMOS33";
+
+#CMOS OV7670
+NET OV7670_xclk          LOC = P119;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_pwdn          LOC = P138;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_reset         LOC = P139;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_pclk          LOC = P120;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_href          LOC = P117;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_vsync         LOC = P118;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_d<0>          LOC = P134;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_d<1>          LOC = P137;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_d<2>          LOC = P132;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_d<3>          LOC = P133;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_d<4>          LOC = P124;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_d<5>          LOC = P131;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_d<6>          LOC = P121;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_d<7>          LOC = P123;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_SIOC          LOC = P116;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_SIOD          LOC = P115;# | IOSTANDARD = "LVCMOS33";
+NET OV7670_PCLK    CLOCK_DEDICATED_ROUTE = FALSE;
+
+#LCD12864 pins
+NET lcd_bus<0>  LOC = P51;
+NET lcd_bus<1>  LOC = P55;
+NET lcd_bus<2>  LOC = P56;
+NET lcd_bus<3>  LOC = P57;
+NET lcd_bus<4>  LOC = P58;
+NET lcd_bus<5>  LOC = P59;
+NET lcd_bus<6>  LOC = P61;
+NET lcd_bus<7>  LOC = P62;
+NET lcd_e  LOC = P50;
+NET lcd_rs  LOC = P47;
+NET lcd_rw  LOC = P48;
